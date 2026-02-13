@@ -70,13 +70,17 @@
 
     .caption {
       position: absolute;
-      bottom: 40px;
+      bottom: 0;              /* stick to bottom edge */
+      left: 0;
       width: 100%;
+      padding: 15px;
       text-align: center;
-      font-size: 56px;   /* large font */
-      font-weight: bold; /* bold text */
-      color: #4b0082;    /* deep purple for contrast */
-      text-shadow: 2px 2px 8px #e6e6fa; /* subtle shadow */
+      font-size: 56px;        /* large font */
+      font-weight: bold;
+      color: #4b0082;         /* deep purple */
+      background: rgba(230, 230, 250, 0.7); /* semi-transparent strip */
+      text-shadow: 2px 2px 8px #fff;
+      box-sizing: border-box;
     }
 
     .slide.active {
@@ -178,13 +182,13 @@
 
       // Play background music (trimmed)
       const music = document.getElementById('bgMusic');
-      music.currentTime = 36;   // start at 10 seconds into the song
+      music.currentTime = 10;   // start at 10 seconds into the song
       music.play();
 
       // Stop after 30 seconds
       setTimeout(() => {
         music.pause();
-      }, 800000);
+      }, 30000);
     }
   </script>
 </body>
